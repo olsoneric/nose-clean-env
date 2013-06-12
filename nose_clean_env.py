@@ -4,12 +4,12 @@ each test.  Use it by setting ``--with-cleanenv`` or the NOSE_WITH_CLEANENV
 environment variable.
 
 The effects are similar to wrapping the following functions around the
-import and execution of each test module::
+execution of each test::
 
-    def setup(module):
-        module._orig_environ = dict(os.environ)
+    def setUp(self):
+        self._orig_environ = dict(os.environ)
 
-    def teardown(module):
+    def tearDown(self):
         os.environ = module._orig_environ
 
 """
@@ -20,7 +20,7 @@ import logging
 from nose.plugins import Plugin
 
 
-log = logging.getLogger('nose.plugins.nose_env')
+log = logging.getLogger('nose.plugins.nose_clean_env')
 
 
 class NoseCleanEnv(Plugin):
