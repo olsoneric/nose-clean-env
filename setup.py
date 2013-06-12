@@ -10,7 +10,7 @@ setup(
     author_email="mail@olsoneric.com",
     maintainer="Eric Olson",
     maintainer_email="mail@olsoneric.com",
-    url="http://github.com/olsoneric/nose-env",
+    url="http://github.com/olsoneric/nose-clean-env",
     keywords=["nose", "plugins", "os.environ", "os", "env", "environment"],
     entry_points={
         'nose.plugins.0.10': [
