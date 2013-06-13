@@ -2,7 +2,7 @@
 from distutils.core import setup
 
 setup(
-    name='nose_clean_env',
+    name='nose-clean-env',
     py_modules=['nose_clean_env'],
     version="0.0.1",
     description="Nose Clean Env restores os.environ after each test",
@@ -18,8 +18,8 @@ setup(
         ]
     },
     classifiers=[
-        'Development Status :: 2 Pre-Alpha',
-        'License :: Apache License 2.0',
+        'Development Status :: 2 - Pre-Alpha',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
     ],
     long_description="""\
