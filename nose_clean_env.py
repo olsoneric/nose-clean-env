@@ -7,10 +7,11 @@ The effects are similar to wrapping the following functions around the
 execution of each test::
 
     def setUp(self):
-        self._orig_environ = dict(os.environ)
+        self._orig_environ = os.environ.copy()
 
     def tearDown(self):
-        os.environ = module._orig_environ
+        os.environ.clear()
+        os.environ.update(self._orig_environ)
 
 """
 
@@ -37,8 +38,9 @@ class NoseCleanEnv(Plugin):
 
     def beforeTest(self, test):
         """Make a copy of os.environ."""
-        self._orig_environ = dict(os.environ)
+        self._orig_environ = os.environ.copy()
 
     def afterTest(self, test):
-        """Restore os.environ from the one we saved."""
-        os.environ = self._orig_environ
+        """Restore os.environ contents from the copy we saved."""
+        os.environ.clear()
+        os.environ.update(self._orig_environ)
